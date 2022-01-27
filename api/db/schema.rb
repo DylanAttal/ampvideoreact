@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_27_205357) do
+ActiveRecord::Schema.define(version: 2022_01_27_210428) do
 
   create_table "video_owners", force: :cascade do |t|
     t.text "name"
@@ -46,7 +46,6 @@ ActiveRecord::Schema.define(version: 2022_01_27_205357) do
     t.integer "category"
     t.integer "video_length_second"
     t.datetime "video_created_at"
-    t.datetime "video_deleted_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -9,7 +9,6 @@ class CreateVideos < ActiveRecord::Migration[6.1]
       t.integer :category
       t.integer :video_length_second
       t.timestamp :video_created_at
-      t.timestamp :video_deleted_at
 
       t.timestamps
     end

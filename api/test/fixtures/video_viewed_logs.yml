@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  video_id: 1
+  viewer_ip: MyText
+  video_viewer_id: 1
+  estimated_seconds_watched: 1
+  shared_video: false
+  viewed_at: 2022-01-27 15:52:46
+
+two:
+  video_id: 1
+  viewer_ip: MyText
+  video_viewer_id: 1
+  estimated_seconds_watched: 1
+  shared_video: false
+  viewed_at: 2022-01-27 15:52:46

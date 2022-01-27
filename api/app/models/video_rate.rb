@@ -1,0 +1,2 @@
+class VideoRate < ApplicationRecord
+end

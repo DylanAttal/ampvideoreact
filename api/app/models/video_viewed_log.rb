@@ -1,0 +1,2 @@
+class VideoViewedLog < ApplicationRecord
+end

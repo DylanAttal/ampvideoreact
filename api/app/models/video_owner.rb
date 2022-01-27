@@ -1,0 +1,2 @@
+class VideoOwner < ApplicationRecord
+end

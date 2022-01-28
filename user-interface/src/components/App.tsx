@@ -3,6 +3,7 @@ import { ChangeEvent, useState } from 'react'
 import styles from '../styles/App.module.css'
 import Header from './Header'
 import Searchbar from './Searchbar'
+import Video from './Video'
 
 interface InitialFormData {
   searchTerm: string
@@ -12,7 +13,7 @@ const initialFormData: InitialFormData = {
   searchTerm: '',
 }
 
-interface Video {
+export interface VideoInfo {
   title: string
   thumbnail: string
   owner: string
@@ -20,12 +21,13 @@ interface Video {
   rank: number
 }
 
+const initialVideos: VideoInfo[] = []
+
 const App = () => {
   const [formData, setFormData] = useState(initialFormData)
-  const [videos, setVideos] = useState([])
+  const [videos, setVideos] = useState(initialVideos)
 
   const updateSearchTerm = async (event: ChangeEvent<HTMLInputElement>) => {
-    console.log(event.target.value)
     setFormData({ ...formData, searchTerm: event.target.value })
     await axios
       .get(`http://localhost:3000/videos?search_term=${event.target.value}`)
@@ -42,6 +44,10 @@ const App = () => {
           searchTerm={formData.searchTerm}
         />
       </form>
+      {videos.length !== 0 &&
+        videos.map((video, index) => {
+          return <Video key={index} videoInfo={video} />
+        })}
     </div>
   )
 }

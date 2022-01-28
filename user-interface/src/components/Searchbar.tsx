@@ -1,5 +1,5 @@
-import { ChangeEvent, useState } from 'react';
-import styles from '../styles/Searchbar.module.css';
+import { ChangeEvent, useState } from 'react'
+import styles from '../styles/Searchbar.module.css'
 
 const Searchbar = () => {
   const [searchTerm, setSearchTerm] = useState('')
@@ -10,9 +10,18 @@ const Searchbar = () => {
 
   return (
     <div className={styles.topLevelDiv}>
-      <input type="text" placeholder='Search...' className={styles.searchbar} onChange={updateUserSearchTerm} />
+      <label htmlFor='searchTerm' className={styles.searchbarLabel}>
+        Search for a video
+      </label>
+      <input
+        id='searchTerm'
+        type='text'
+        placeholder='Search...'
+        className={styles.searchbar}
+        onChange={updateUserSearchTerm}
+      />
     </div>
   )
 }
 
-export default Searchbar;
+export default Searchbar

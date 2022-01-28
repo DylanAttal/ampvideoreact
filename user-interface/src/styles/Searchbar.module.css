@@ -1,11 +1,17 @@
 .topLevelDiv {
   width: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.searchbarLabel {
+  font-size: 1rem;
+  padding: 0.25rem;
 }
 
 .searchbar {
   width: 50%;
   padding: 0.5rem;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }

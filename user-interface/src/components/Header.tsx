@@ -1,9 +1,17 @@
-import styles from '../styles/Header.module.css';
+import styles from '../styles/Header.module.css'
 
-const Header = () => {
+interface HeaderProps {
+  firstWord: string
+  secondWord: string
+}
+
+const Header = (props: HeaderProps) => {
   return (
-    <h1><span className={styles.amp}>Amp</span><span className={styles.video}>Video</span></h1>
+    <h1>
+      <span className={styles.amp}>{props.firstWord}</span>
+      <span className={styles.video}>{props.secondWord}</span>
+    </h1>
   )
 }
 
-export default Header;
+export default Header

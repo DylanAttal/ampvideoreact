@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  get 'videos' => 'videos#index'
+  get "videos" => "videos#find_matching_videos"
 end

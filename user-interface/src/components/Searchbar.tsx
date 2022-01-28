@@ -1,13 +1,12 @@
-import { ChangeEvent, useState } from 'react'
+import { ChangeEvent } from 'react'
 import styles from '../styles/Searchbar.module.css'
 
-const Searchbar = () => {
-  const [searchTerm, setSearchTerm] = useState('')
+interface SearchbarProps {
+  searchTerm: string
+  updateSearchTerm: (event: ChangeEvent<HTMLInputElement>) => void
+}
 
-  const updateUserSearchTerm = (event: ChangeEvent<HTMLInputElement>) => {
-    setSearchTerm(event.target.value)
-  }
-
+const Searchbar = (props: SearchbarProps) => {
   return (
     <div className={styles.topLevelDiv}>
       <label htmlFor='searchTerm' className={styles.searchbarLabel}>
@@ -17,8 +16,9 @@ const Searchbar = () => {
         id='searchTerm'
         type='text'
         placeholder='Search...'
+        value={props.searchTerm}
         className={styles.searchbar}
-        onChange={updateUserSearchTerm}
+        onChange={props.updateSearchTerm}
       />
     </div>
   )

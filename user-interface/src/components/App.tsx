@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { ChangeEvent, useState } from 'react'
 import styles from '../styles/App.module.css'
 import Header from './Header'
 import Searchbar from './Searchbar'
@@ -14,11 +14,18 @@ const initialFormData: InitialFormData = {
 const App = () => {
   const [formData, setFormData] = useState(initialFormData)
 
+  const updateSearchTerm = (event: ChangeEvent<HTMLInputElement>) => {
+    setFormData({ ...formData, searchTerm: event.target.value })
+  }
+
   return (
     <div className={styles.app}>
       <Header firstWord='Amp' secondWord='Video' />
       <form className={styles.form}>
-        <Searchbar />
+        <Searchbar
+          updateSearchTerm={updateSearchTerm}
+          searchTerm={formData.searchTerm}
+        />
       </form>
     </div>
   )

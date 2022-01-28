@@ -25,9 +25,10 @@ const App = () => {
   const [videos, setVideos] = useState([])
 
   const updateSearchTerm = async (event: ChangeEvent<HTMLInputElement>) => {
+    console.log(event.target.value)
     setFormData({ ...formData, searchTerm: event.target.value })
     await axios
-      .get(`http://localhost:3000/videos?search_term=${formData.searchTerm}`)
+      .get(`http://localhost:3000/videos?search_term=${event.target.value}`)
       .then((resp) => setVideos(resp.data))
       .catch(console.error)
   }

@@ -37,7 +37,7 @@ Clone this repo if you'd like to run the app locally for yourself.
 I built this app on a Mac with the following technologies installed: React 17, Node 17, Ruby 3, and Rails 6. Trying to run this app on a different kind of machine or with different versions of the technologies may yield different results.
 
 In `ampvideoreact/user-interface` run
-`npm i` then `npm run serve`. The UI should be running on localhost:3001 now. It's important to run on this port to avoid CORS issues.
+`npm i` then `npm start`. The UI should be running on localhost:3001 now. It's important to run on this port to avoid CORS issues.
 
 In `ampvideoreact/api` run `bundle install`, `rails db:setup`, and `rails s`. <em>Note: The command `rails db:setup` may take a little while; there are a lot of records to create.</em>
 

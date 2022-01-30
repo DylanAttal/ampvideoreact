@@ -71,6 +71,15 @@ const App = () => {
     const selectedVideo = videos.filter((x, i) => i === index)[0]
     setSelectedVideo(selectedVideo)
     setShowVideoList(false)
+
+    focusSearchbar()
+  }
+
+  const focusSearchbar = () => {
+    const searchbarEl = document.getElementById('searchbar')
+    if (searchbarEl) {
+      searchbarEl.focus()
+    }
   }
 
   return (

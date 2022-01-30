@@ -10,13 +10,14 @@ interface SearchbarProps {
 const Searchbar = (props: SearchbarProps) => {
   return (
     <div className={styles.topLevelDiv}>
-      <label htmlFor='searchTerm' className={styles.searchbarLabel}>
+      <label htmlFor='searchbar' className={styles.searchbarLabel}>
         Search for a video
       </label>
       <input
-        id='searchTerm'
+        id='searchbar'
         type='text'
         placeholder='Search...'
+        autoFocus
         value={props.searchTerm}
         className={styles.searchbar}
         onChange={props.updateSearchTerm}

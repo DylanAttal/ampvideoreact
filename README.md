@@ -1,6 +1,6 @@
 # AmpVideoReact demo app
 
-<img src="./assets/ampvideoreact.gif">
+<img src="./assets/ampvideoreact.gif" style="display: block; margin: 0 auto;">
 
 ## Summary
 

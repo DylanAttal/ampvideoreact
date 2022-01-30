@@ -57,7 +57,7 @@ const App = () => {
   return (
     <div className={styles.app}>
       <Header firstWord='Amp' secondWord='Video' />
-      <form className={styles.form}>
+      <form className={styles.form} onSubmit={(e) => e.preventDefault()}>
         <Searchbar
           updateSearchTerm={updateSearchTerm}
           searchTerm={formData.searchTerm}

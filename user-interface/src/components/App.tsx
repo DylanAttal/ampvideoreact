@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { ChangeEvent, useState } from 'react'
 import styles from '../styles/App.module.css'
+import DropdownOption from './DropdownOption'
 import Header from './Header'
 import Searchbar from './Searchbar'
 import Video from './Video'
@@ -21,11 +22,20 @@ export interface VideoInfo {
   rank: number
 }
 
+const initialVideo: VideoInfo = {
+  title: '',
+  thumbnail: '',
+  owner: '',
+  views: 0,
+  rank: 0,
+}
+
 const initialVideos: VideoInfo[] = []
 
 const App = () => {
   const [formData, setFormData] = useState(initialFormData)
   const [videos, setVideos] = useState(initialVideos)
+  const [selectedVideo, setSelectedVideo] = useState(initialVideo)
 
   const updateSearchTerm = async (event: ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, searchTerm: event.target.value })
@@ -44,10 +54,14 @@ const App = () => {
           searchTerm={formData.searchTerm}
         />
       </form>
-      {videos.length !== 0 &&
-        videos.map((video, index) => {
-          return <Video key={index} videoInfo={video} />
-        })}
+      <section className={styles.section}>
+        {videos.length !== 0 &&
+          videos.map((video, index) => {
+            return <DropdownOption key={index} title={video.title} />
+          })}
+      </section>
+
+      {selectedVideo.title !== '' && <Video videoInfo={selectedVideo} />}
     </div>
   )
 }

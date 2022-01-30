@@ -1,0 +1,17 @@
+.dropdownContainer,
+.noSuggestions {
+  width: 50%;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-right: 1px solid #000;
+  border-left: 1px solid #000;
+}
+
+.dropdownContainer:hover {
+  background-color: #ccc;
+}
+
+.noSuggestions {
+  cursor: not-allowed;
+}

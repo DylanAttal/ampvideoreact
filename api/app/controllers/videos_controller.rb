@@ -2,6 +2,10 @@ class VideosController < ApplicationController
   def find_matching_videos
     search_term = params[:search_term].downcase
 
+    if (search_term == '')
+      return render json: []
+    end
+
     @matching_videos = Video.select { |video| video.title.downcase.include?(search_term) }.first(10)
 
     if (@matching_videos.count == 0)

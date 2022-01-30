@@ -1,0 +1,19 @@
+.selectedVideoContainer {
+  display: flex;
+}
+
+.thumbnailContainer,
+.videoTextContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.videoTextContainer p {
+  margin: 1rem;
+}
+
+.videoTitle {
+  font-weight: 600;
+}

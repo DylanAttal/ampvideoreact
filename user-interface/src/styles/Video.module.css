@@ -1,5 +1,6 @@
 .selectedVideoContainer {
   display: flex;
+  margin: 2rem;
 }
 
 .thumbnailContainer,

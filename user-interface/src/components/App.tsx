@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { ChangeEvent, MouseEvent, useState } from 'react'
+import { ChangeEvent, KeyboardEvent, MouseEvent, useState } from 'react'
 import styles from '../styles/App.module.css'
 import DropdownOption from './DropdownOption'
 import Header from './Header'
@@ -47,10 +47,29 @@ const App = () => {
     setShowVideoList(true)
   }
 
+  const handleEnter = (event: KeyboardEvent<HTMLInputElement>) => {
+    if (!(event.key === 'Enter')) {
+      return
+    }
+
+    const foundVideo = videos.filter(
+      (x) =>
+        x.title.toLowerCase() ===
+        (event.target as HTMLInputElement).value.toLowerCase()
+    )[0]
+
+    if (foundVideo) {
+      setSelectedVideo(foundVideo)
+    }
+  }
+
   const selectVideo = (event: MouseEvent, index: number) => {
+    if ((event.target as HTMLDivElement).textContent === 'No suggestions') {
+      return
+    }
+
     const selectedVideo = videos.filter((x, i) => i === index)[0]
     setSelectedVideo(selectedVideo)
-    console.log('hey')
     setShowVideoList(false)
   }
 
@@ -61,6 +80,7 @@ const App = () => {
         <Searchbar
           updateSearchTerm={updateSearchTerm}
           searchTerm={formData.searchTerm}
+          handleEnter={handleEnter}
         />
       </form>
       <section className={styles.section}>
